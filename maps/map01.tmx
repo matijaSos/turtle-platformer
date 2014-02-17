@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="55" height="35" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="simpleTileset" tilewidth="32" tileheight="32">
+  <image source="../img/maptiles.png" trans="ffffff" width="64" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="Solid" value=""/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Solid" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tiles" width="55" height="35">
+  <data encoding="base64" compression="zlib">
+   eJztWFsOwCAIc97/0Mt+DQ55rjibmGVfUKiFeLXWro3PjjjcauJwo9GJg4RKfZP6YCVuUsy4UXpD0xyHiL5Z6uI5f/+oyWxE5KDlNtOd5k5G1feLvmXttCia1IDTzSq37JnQm723iH2b5STNFZGbFzy4eXqmBjPdjv8reY61oDgg7Ghc36rukg+y75v23UYzEy3eiu5D6PlZgMjNSxfe3JDeQLPiesbow/ctJjXv0LSq8Vc0DhSy3hSy71K0l0TsJBmes6JXaUyU/SxCUyj7ZyS3aH7cLOC8tfq5ASeFAZk=
+  </data>
+ </layer>
+</map>
