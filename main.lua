@@ -1,6 +1,6 @@
 
-local loader    = require "lib/Advanced-Tiled-Loader/Loader"
-local HC        = require "lib/HardonCollider"
+local loader    = require "lib.Advanced-Tiled-Loader.Loader"
+local HC        = require "lib.HardonCollider"
 
 require "Player"
 require "Camera"
@@ -69,8 +69,8 @@ function love.load()
     camera = Camera:new()
 
     -- Initialize other stuff
-    tileWidth  = 32 -- Some other way to know this, maybe from map?
-    tileHeight = 32
+    tileWidth  = map.tileWidth
+    tileHeight = map.tileHeight
 
     solidTiles = findSolidTiles(map)
 
