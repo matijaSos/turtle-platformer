@@ -5,7 +5,6 @@ local HC        = require "lib.HardonCollider"
 require "Player"
 require "Camera"
 
-
 ------------- Handling input --------------
 
 function handleInput(dt)
