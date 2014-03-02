@@ -63,7 +63,7 @@ function love.load()
 
     loader.path = "maps/"
     map = loader.load("map01-coins.tmx")
-    map.drawObjects = false
+    map.drawObjects = true
 
     collider = HC(100, on_collide, collide_stop)
 
