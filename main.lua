@@ -1,4 +1,5 @@
 
+local anim8     = require "lib/anim8"
 local loader    = require "lib.Advanced-Tiled-Loader.Loader"
 local HC        = require "lib.HardonCollider"
 
@@ -61,7 +62,8 @@ end
 function love.load()
 
     loader.path = "maps/"
-    map = loader.load("map01.tmx")
+    map = loader.load("map01-coins.tmx")
+    map.drawObjects = false
 
     collider = HC(100, on_collide, collide_stop)
 
@@ -71,10 +73,18 @@ function love.load()
     tileWidth  = map.tileWidth
     tileHeight = map.tileHeight
 
+    -- Add map tiles to collision detection system
     solidTiles = findSolidTiles(map)
+
+    -- Iterate over objects in map
 
     -- Initialize player
     turtle = Player:new()
+
+    -- Try coin animation
+    coinImg = love.graphics.newImage("img/coin-fat.png")
+    local coinGrid = anim8.newGrid(32, 32, coinImg:getWidth(), coinImg:getHeight())
+    coinAnimation = anim8.newAnimation(coinGrid('1-8', 1), 0.1)
 
     gravity = 1800
 
@@ -86,6 +96,7 @@ function love.update(dt)
     turtle:update(dt, gravity)
     collider:update(dt)
 
+    coinAnimation:update(dt)
 end
 
 function love.draw()
@@ -103,7 +114,7 @@ function love.draw()
                      0, map.height*tileHeight - h)
 
     -- We want turtle to be in the center of screen
-    camera:setPosition(x - w/2, y - h/2)
+    camera:setPosition(x - w/2, y - h/2) -- WARNING: this may be not integer values!
     camera:set()
 
     map:setDrawRange(camera:getX(), camera:getY(), w, h)
@@ -112,6 +123,8 @@ function love.draw()
     map:draw()
     --Draw player
     turtle:draw()
+
+    coinAnimation:draw(coinImg, 256, 128)
 
     ---------------------------- Debugging stuff --------------------------------
 

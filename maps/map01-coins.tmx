@@ -14,7 +14,7 @@
   </tile>
  </tileset>
  <tileset firstgid="3" name="coin" tilewidth="32" tileheight="32">
-  <image source="../img/coin.png" trans="ffffff" width="640" height="32"/>
+  <image source="../img/coin-fat.png" trans="ffffff" width="256" height="32"/>
  </tileset>
  <layer name="Tiles" width="55" height="35">
   <data encoding="base64" compression="zlib">
@@ -22,8 +22,15 @@
   </data>
  </layer>
  <objectgroup name="coins" width="55" height="35">
-  <object gid="1" x="194" y="223"/>
-  <object gid="1" x="219" y="217"/>
-  <object gid="1" x="241" y="224"/>
+  <object gid="4" x="446" y="152"/>
+  <object gid="4" x="479" y="151"/>
+  <object gid="4" x="515" y="155"/>
+  <object gid="4" x="291" y="246"/>
+  <object gid="4" x="663" y="211"/>
+  <object gid="6" x="489" y="361"/>
+  <object gid="6" x="315" y="469"/>
+  <object gid="6" x="605" y="572"/>
+  <object gid="6" x="804" y="245"/>
+  <object x="540" y="331" width="32" height="32"/>
  </objectgroup>
 </map>
